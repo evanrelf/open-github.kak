@@ -1,5 +1,5 @@
-define-command -docstring "github: Open primary selection on GitHub" \
-github %{ evaluate-commands %sh{
+define-command -docstring "open-github: Open primary selection on GitHub" \
+open-github %{ evaluate-commands %sh{
   root=$(git rev-parse --show-toplevel)
   repo=$(git remote get-url origin | sed -E 's#^(https://|git@)github\.com[:/]([^/]+\/[^.]+)(\.git)?$#\2#')
   rev=$(git rev-parse HEAD)
