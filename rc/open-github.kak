@@ -1,5 +1,5 @@
-define-command -docstring "open-github: Open primary selection on GitHub" \
-open-github %{ evaluate-commands %sh{
+define-command -docstring "github-open: Open primary selection on GitHub" \
+github-open %{ evaluate-commands %sh{
   root=$(git rev-parse --show-toplevel)
   repo=$(git remote get-url origin | sed -E 's#^(https://|git@)github\.com[:/]([^/]+\/[^.]+)(\.git)?$#\2#')
   rev=$(git rev-parse HEAD)
@@ -20,8 +20,8 @@ open-github %{ evaluate-commands %sh{
   fi
 }}
 
-define-command -docstring "copy-github: Copy link to primary selection on GitHub" \
-copy-github %{ evaluate-commands %sh{
+define-command -docstring "github-copy: Copy link to primary selection on GitHub" \
+github-copy %{ evaluate-commands %sh{
   root=$(git rev-parse --show-toplevel)
   repo=$(git remote get-url origin | sed -E 's#^(https://|git@)github\.com[:/]([^/]+\/[^.]+)(\.git)?$#\2#')
   rev=$(git rev-parse HEAD)
