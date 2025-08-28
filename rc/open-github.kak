@@ -9,6 +9,7 @@ github %{ evaluate-commands %sh{
   if [ "$anchor_line" = "$cursor_line" ]; then
     line_range="L$anchor_line"
   else
+    # TODO: handle case where selection is flipped and cursor is before anchor
     line_range="L$anchor_line-L$cursor_line"
   fi
   url="https://github.com/$repo/blob/$rev/$path#$line_range"
